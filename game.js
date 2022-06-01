@@ -10,6 +10,7 @@ $('.btn').click(function () {
     userClickedPattern.push(userChosenColor);
     //check what the array contains
     console.log(userClickedPattern);
+    animatePress(userChosenColor);
     playSound(userChosenColor);
 });
 
@@ -27,8 +28,16 @@ function nextSequence() {
 
 
 //plays sounds for colors
-function playSound(color) {
-    //play sound based on color  
-    var audio = new Audio(`sounds/${color}.mp3`);
+function playSound(name) {
+    //play sound based on color name  
+    var audio = new Audio(`sounds/${name}.mp3`);
     audio.play();
+}
+
+//animates when button is pressed
+function animatePress(currentColor) {
+    $('#' + currentColor).addClass('pressed');
+    setTimeout(function () {
+        $('#' + currentColor).removeClass('pressed');
+    }, 100);
 }
