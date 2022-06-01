@@ -7,6 +7,7 @@ $('.btn').click(function() {
     var userChosenColor = $(this).attr('id');
     userClickedPattern.push(userChosenColor);
     console.log(userClickedPattern);
+    nextSequence();
 });
 
 //create random color, animate, and play sound
@@ -20,6 +21,6 @@ function nextSequence() {
     //animate flash based on random color
     $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     //play sound based on random color
-    var audio = new Audio(`sounds/${randomChosenColor}mp3`);
+    var audio = new Audio(`sounds/${randomChosenColor}.mp3`);
     audio.play();
 }
