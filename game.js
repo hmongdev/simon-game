@@ -20,15 +20,44 @@ $(document).keypress(function () {
 $('.btn').click(function () {
     //stores id of button that was clicked
     var userChosenColor = $(this).attr('id');
-    //pushes id into array
+    //pushes color into array
     userClickedPattern.push(userChosenColor);
+    console.log(`User color is: ${userChosenColor}`);
+
     //check what the array contains
     playSound(userChosenColor);
     animatePress(userChosenColor);
+    checkAnswer(userClickedPattern.length - 1);
 });
+
+//check userChosenColor === randomChosenColor
+function checkAnswer(currentLevel) {
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        $('#message').text('Correct!')
+        if (userClickedPattern.length === gamePattern.length) {
+            setTimeout(function () {
+                nextSequence();
+            }, 1000);
+        }
+    } else {
+        $('#message').text('Better Luck Next Time!');
+        //playSound if user gets answer wrong
+        playSound('wrong');
+
+        $("body").addClass("game-over");
+      setTimeout(function () {
+        $("body").removeClass("game-over");
+      }, 200);
+
+      //3. Change the h1 title to say "Game Over, Press Any Key to Restart" if the user got the answer wrong.
+      $("#level-title").text("Game Over, Press Any Key to Restart");
+    }
+}
 
 //create random color, animate, and play sound
 function nextSequence() {
+    // once nextSequence() is triggered, reset the userClickedPattern to an empty array ready for the next level.
+    userClickedPattern = [];
     //update level
     level++;
     $('#level-title').text(`Level ${level}`);
@@ -37,10 +66,11 @@ function nextSequence() {
     var randomNumber = ~~(Math.random() * 4); // 0-3
     var randomChosenColor = buttonColors[randomNumber]
     gamePattern.push(randomChosenColor);
+    console.log(`Random color is: ${randomChosenColor}`);
 
     //animate flash based on random color
     $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
-    
+
     //play sound based on random color
     playSound(randomChosenColor);
 }
