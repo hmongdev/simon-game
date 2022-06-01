@@ -1,13 +1,18 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   background-color: rgb(0, 242, 255);
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 5%;
-  color: #FEF2BF;
+  color: yellow;
+  -webkit-text-stroke: 1px black;
 }
 
 .container {
@@ -49,11 +54,4 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
