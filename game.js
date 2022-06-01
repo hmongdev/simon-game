@@ -1,6 +1,21 @@
 var buttonColors = ['red', 'blue', 'green', 'yellow']
 var gamePattern = []
 var userClickedPattern = []
+var level = 0;
+var started = false;
+
+//detect keboard press to begin game
+$(document).keypress(function () {
+    if (!started) {
+        //displays level #
+        $('#level-title').text(`Level ${level}`);
+        nextSequence();
+        //start game
+        started = true;
+    }
+});
+
+
 //check which button was pressed //handler function
 $('.btn').click(function () {
     //stores id of button that was clicked
@@ -14,12 +29,18 @@ $('.btn').click(function () {
 
 //create random color, animate, and play sound
 function nextSequence() {
+    //update level
+    level++;
+    $('#level-title').text(`Level ${level}`);
+
     //select random color, push it into gamePattern
     var randomNumber = ~~(Math.random() * 4); // 0-3
     var randomChosenColor = buttonColors[randomNumber]
     gamePattern.push(randomChosenColor);
+
     //animate flash based on random color
     $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100);
+    
     //play sound based on random color
     playSound(randomChosenColor);
 }
