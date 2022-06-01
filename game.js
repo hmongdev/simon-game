@@ -45,12 +45,15 @@ function checkAnswer(currentLevel) {
         playSound('wrong');
 
         $("body").addClass("game-over");
-      setTimeout(function () {
-        $("body").removeClass("game-over");
-      }, 200);
+        setTimeout(function () {
+            $("body").removeClass("game-over");
+        }, 200);
 
-      //3. Change the h1 title to say "Game Over, Press Any Key to Restart" if the user got the answer wrong.
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+        //message if user got answer wrong
+        $("#level-title").text("Game Over, Press Any Key to Restart");
+
+        //restarts the game loop
+        startOver();
     }
 }
 
@@ -91,4 +94,10 @@ function animatePress(currentColor) {
     setTimeout(function () {
         $(`#${currentColor}`).removeClass('pressed');
     }, 100);
+}
+//reset values of level, gamePattern, and started variables
+function startOver() {
+    level = 0;
+    gamePattern = [];
+    started = false;
 }
