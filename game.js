@@ -2,10 +2,13 @@ var buttonColors = ['red', 'blue', 'green', 'yellow']
 var gamePattern = []
 var userClickedPattern = []
 
-//check which button was pressed
+//check which button was pressed //handler function
 $('.btn').click(function () {
+    //stores id of button that was clicked
     var userChosenColor = $(this).attr('id');
+    //pushes id into array
     userClickedPattern.push(userChosenColor);
+    //check what the array contains
     console.log(userClickedPattern);
 });
 
