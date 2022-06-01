@@ -1,7 +1,6 @@
 var buttonColors = ['red', 'blue', 'green', 'yellow']
 var gamePattern = []
 var userClickedPattern = []
-
 //check which button was pressed //handler function
 $('.btn').click(function () {
     //stores id of button that was clicked
@@ -9,9 +8,8 @@ $('.btn').click(function () {
     //pushes id into array
     userClickedPattern.push(userChosenColor);
     //check what the array contains
-    console.log(userClickedPattern);
-    animatePress(userChosenColor);
     playSound(userChosenColor);
+    animatePress(userChosenColor);
 });
 
 //create random color, animate, and play sound
@@ -36,8 +34,10 @@ function playSound(name) {
 
 //animates when button is pressed
 function animatePress(currentColor) {
-    $('#' + currentColor).addClass('pressed');
+    //adds pressed class
+    $(`#${currentColor}`).addClass('pressed');
+    //removes pressed class AFTER delay
     setTimeout(function () {
-        $('#' + currentColor).removeClass('pressed');
+        $(`#${currentColor}`).removeClass('pressed');
     }, 100);
 }
