@@ -24,8 +24,8 @@ body {
   margin: 25px;
   display: inline-block;
   /* size of buttons */
-  height: 10rem;
-  width: 10rem;
+  height: 20rem;
+  width: 20rem;
   border: 0.5rem solid black;
   border-radius: 25%;
 }
