@@ -9,6 +9,7 @@ body {
 
 
 #restartButton {
+  font-family: 'Press Start 2P', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
