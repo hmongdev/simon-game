@@ -5,7 +5,7 @@ var level = 0;
 var started = false;
 
 //detect keboard press to begin game
-$(document).click(function () {
+$(document).touchstart(function () {
     if (!started) {
         //displays level #
         $('#level-title').text(`Level ${level}`);
