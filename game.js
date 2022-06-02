@@ -4,12 +4,12 @@ var userClickedPattern = []
 var level = 0;
 var started = false;
 
-$(document).on('tap', function () {
+$(document).on('touchstart', () {
     alert('I was tapped!');
 })
 
 //detect keboard press to begin game
-$(document).on('tap', () => {
+$(document).on('touchstart', () => {
     if (!started) {
         //displays level #
         $('#level-title').text(`Level ${level}`);
