@@ -28,7 +28,7 @@ h1 {
   /* size of buttons */
   height: 20rem;
   width: 20rem;
-  border: 0.5rem solid black;
+  border: 1rem solid black;
   border-radius: 25%;
 }
 
@@ -40,7 +40,6 @@ h1 {
 .red {
   background-color: red;
   -webkit-border-radius: 10% 100% 10% 30%;
-
 }
 
 .green {
