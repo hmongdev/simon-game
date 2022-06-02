@@ -100,7 +100,7 @@ function nextSequence() {
 //plays sounds for colors
 function playSound(name) {
     //play sound based on color name  
-    var audio = new Audio(`sounds/${name}.mp3`);
+    var audio = new Audio(`../simon-game/sounds/${name}.mp3`);
     audio.play();
 }
 
