@@ -69,7 +69,7 @@ function checkAnswer(currentLevel) {
 
         //message if user got answer wrong
         $("#level-title").text("Game Over");
-        $('#message').text('Tap to Restart')
+        $('#message').text('Try Again?');
 
         //restarts the game loop
         startOver();
