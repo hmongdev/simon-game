@@ -15,6 +15,16 @@ document.addEventListener('touchstart', function () {
     }
 });
 
+document.on('click', function () {
+    if (!started) {
+        //displays level #
+        $('#level-title').text(`Level ${level}`);
+        nextSequence();
+        //start game
+        started = true;
+    }
+});
+
 let e = $('.btn');
 //check which button was pressed //handler function
 e.click(function (event) {
