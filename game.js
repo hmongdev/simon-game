@@ -15,7 +15,7 @@ document.addEventListener('touchstart', function () {
     }
 });
 
-document.on('click', function () {
+$(document).on('click', function () {
     if (!started) {
         //displays level #
         $('#level-title').text(`Level ${level}`);
