@@ -4,7 +4,7 @@ var userClickedPattern = []
 var level = 0;
 var started = false;
 
-//detect keboard press to begin game
+//detect touchstart
 document.addEventListener('touchstart', function () {
     if (!started) {
         //displays level #
@@ -14,8 +14,18 @@ document.addEventListener('touchstart', function () {
         started = true;
     }
 });
-
+//detect click
 $(document).on('click', function () {
+    if (!started) {
+        //displays level #
+        $('#level-title').text(`Level ${level}`);
+        nextSequence();
+        //start game
+        started = true;
+    }
+});
+//detect keypress
+$(document).on('keypress', function () {
     if (!started) {
         //displays level #
         $('#level-title').text(`Level ${level}`);
