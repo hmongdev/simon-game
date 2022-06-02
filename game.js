@@ -5,15 +5,15 @@ var level = 0;
 var started = false;
 
 //detect keboard press to begin game
-$(document).on('tap', function() {
-    if (!started) {
-        //displays level #
-        $('#level-title').text(`Level ${level}`);
-        nextSequence();
-        //start game
-        started = true;
-    }
-});
+$(document).on('tap', () => {
+        if (!started) {
+            //displays level #
+            $('#level-title').text(`Level ${level}`);
+            nextSequence();
+            //start game
+            started = true;
+        }
+    });
 
 
 //check which button was pressed //handler function
