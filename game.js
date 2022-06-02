@@ -35,9 +35,8 @@ $(document).on('keypress', function () {
     }
 });
 
-let e = $('.btn');
 //check which button was pressed //handler function
-e.click(function (event) {
+$('.btn').click(function () {
     //stores id of button that was clicked
     var userChosenColor = $(this).attr('id');
     //pushes color into array
