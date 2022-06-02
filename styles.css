@@ -9,13 +9,15 @@ body {
 
 h1 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 5rem;
+  font-size: 3rem;
+  line-height: 2;
   margin: 4rem 0;
   color: yellow;
   -webkit-text-stroke: 1px black;
 }
 
-.container {
+.container,
+.row {
   width: 100vw;
   height: 100vh;
 }
@@ -37,18 +39,24 @@ h1 {
 
 .red {
   background-color: red;
+  -webkit-border-radius: 10% 100% 10% 30%;
+
 }
 
 .green {
   background-color: green;
+  -webkit-border-radius: 100% 10% 30%;
 }
 
 .blue {
   background-color: blue;
+  -webkit-border-radius: 30% 10% 100%;
 }
 
 .yellow {
   background-color: yellow;
+  -webkit-border-radius: 10% 30% 10% 100%;
+
 }
 
 .pressed {
