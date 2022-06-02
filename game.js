@@ -50,7 +50,8 @@ function checkAnswer(currentLevel) {
         }, 200);
 
         //message if user got answer wrong
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over");
+        $('#message').text('Tap to Restart')
 
         //restarts the game loop
         startOver();
