@@ -6,18 +6,18 @@ var started = false;
 
 //detect keboard press to begin game
 $(document).on('tap', () => {
-        if (!started) {
-            //displays level #
-            $('#level-title').text(`Level ${level}`);
-            nextSequence();
-            //start game
-            started = true;
-        }
-    });
+    if (!started) {
+        //displays level #
+        $('#level-title').text(`Level ${level}`);
+        nextSequence();
+        //start game
+        started = true;
+    }
+});
 
-
+let e = $('.btn');
 //check which button was pressed //handler function
-$('.btn').click(function () {
+e.click(function (event) {
     //stores id of button that was clicked
     var userChosenColor = $(this).attr('id');
     //pushes color into array
