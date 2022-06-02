@@ -4,7 +4,7 @@ var userClickedPattern = []
 var level = 0;
 var started = false;
 
-$(document).on('tap', function (event) {
+$(document).on('tap', function () {
     alert('I was tapped!');
 })
 
