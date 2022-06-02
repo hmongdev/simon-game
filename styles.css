@@ -1,13 +1,12 @@
 body {
-  font-family: 'Press Start 2P', cursive;
-  -webkit-text-stroke: 1px black;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
   background-color: rgb(0, 242, 255);
 }
+
 
 #restartButton {
   display: flex;
@@ -17,7 +16,6 @@ body {
   background-color: gray;
   border: 1rem solid black;
   margin: 0 auto;
-  text-align: center;
   color: white;
   border-radius: 15px;
   width: 20rem;
@@ -25,21 +23,32 @@ body {
 }
 
 h1 {
+  font-family: 'Press Start 2P', cursive;
+  -webkit-text-stroke: 1px black;
   font-size: 3rem;
   line-height: 1.5;
-  height: 10rem;
-  margin: 4rem 0;
   color: yellow;
+}
+
+ol, li {
+  font-weight: bold;
+  font-size: 2rem;
+  list-style: none;
+  font-family: 'Muli', sans-serif;
+  display: inline-block;
+  font-size: 2rem;
+  width: 90%;
 }
 
 .container,
 .row {
   width: 100vw;
   height: 100vh;
+  text-align: center;
 }
 
 .btn {
-  margin: 25px;
+  margin: 1rem;
   display: inline-block;
   /* size of buttons */
   height: 20rem;
@@ -77,4 +86,10 @@ h1 {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+#message {
+  padding: 0;
+  justify-content: center;
+  align-items: center;
 }
